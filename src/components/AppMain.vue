@@ -15,7 +15,7 @@ export default {
     methods: {
         fetchProjects() {
             axios.get(baseEndpoint)
-                .then(res => { this.projects = res.data; })
+                .then(res => { this.projects = res.data.data; })
                 .catch(err => { console.log(err) })
         }
     },
