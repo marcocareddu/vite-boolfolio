@@ -24,11 +24,11 @@ export default {
 </script>
 
 <template>
-    <div class="container row">
-        <ul>
-            <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
-        </ul>
-    </div>
+    <main class="container">
+        <div class="row">
+            <AppCard v-for="project in projects" :key="project.id" :data="project" />
+        </div>
+    </main>
 </template>
 
 <style></style>
