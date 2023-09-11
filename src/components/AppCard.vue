@@ -1,12 +1,16 @@
-<script></script>
+<script>
+export default {
+    props: { data: Object }
+}
+</script>
 
 <template>
     <div class="card col-5 m-3 text-bg-dark">
-        <img src="project.thumb" class="card-img-top" alt="...">
+        <img src="data.thumb" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column justify-content-between">
             <div>
-                <h5 class="card-title">{{ project.name }}</h5>
-                <p class="card-text">{{ project.description }}</p>
+                <h5 class="card-title">{{ data.name }}</h5>
+                <p class="card-text">{{ data.description }}</p>
             </div>
 
             <!-- Buttons -->
