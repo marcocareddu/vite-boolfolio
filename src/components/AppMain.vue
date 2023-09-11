@@ -26,6 +26,8 @@ export default {
 <template>
     <main class="container">
         <div class="row">
+
+            <!-- Dynamic Card Here -->
             <AppCard v-for="project in projects" :key="project.id" :data="project" />
         </div>
     </main>
