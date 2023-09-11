@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div class="card col-5 m-3 text-bg-dark">
+    <div class="card col-3 m-3 text-bg-dark">
         <img src="data.thumb" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column justify-content-between">
             <div>
@@ -14,10 +14,10 @@ export default {
             </div>
 
             <!-- Buttons -->
-            <div class="d-flex">
+            <div class="d-flex pt-5">
 
                 <!-- Github Button -->
-                <button class="btn btn-outline-dark"><i class="fa-brands fa-github"></i></button>
+                <button class="btn btn-outline-light"><i class="fa-brands fa-github"></i></button>
 
                 <!-- Edit Button -->
                 <button class="btn btn-outline-warning mx-3"><i class="fa-solid fa-pencil"></i></button>
@@ -26,7 +26,7 @@ export default {
                 <button class="btn btn-outline-primary mx-3"><i class="fa-solid fa-eye"></i></button>
 
                 <!-- Delete Button -->
-                <button class="btn btn-outline-danger text-black"><i class="fa-solid fa-trash-can"></i></button>
+                <button class="btn btn-outline-danger text-red"><i class="fa-solid fa-trash-can"></i></button>
 
             </div>
         </div>
