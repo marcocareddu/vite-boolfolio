@@ -15,7 +15,10 @@ export default {
     methods: {
         fetchProjects() {
             axios.get(baseEndpoint)
-                .then(res => { this.projects = res.data.data; })
+                .then(res => {
+                    const { data, links } = res.data;
+                    this.projects = { data, links };
+                })
                 .catch(err => { console.log(err) })
         }
     },
@@ -29,15 +32,29 @@ export default {
     <main class="container">
 
         <!-- Hide if empty -->
-        <div v-if="projects.length" class="row">
+        <div v-if="projects.data.length" class="row">
 
             <!-- Dynamic Card Here -->
-            <AppCard v-for="project in projects" :key="project.id" :data="project" />
+            <AppCard v-for="project in projects.data" :key="project.id" :data="project" />
+
+            <!-- Pagination Navbar -->
+            <nav>
+                <ul class="pagination">
+                    <li v-for="element in projects.links" :key="element.label" class="page-item">
+                        <a class="page-link" href="#">{{ element.label }}</a>
+                    </li>
+                </ul>
+            </nav>
+
+
         </div>
 
         <div v-else class="d-flex justify-content-center align-item-center mt-3">
             <h1>Non ci sono progetti da visualizzare</h1>
         </div>
+
+
+
     </main>
 </template>
 
