@@ -13,7 +13,7 @@ export default {
         }
     },
     methods: {
-        fetchProjects() {
+        fetchProjects(baseEndpoint = 'http://127.0.0.1:8000/api/projects/') {
             axios.get(baseEndpoint)
                 .then(res => {
                     const { data, links } = res.data;
@@ -42,7 +42,7 @@ export default {
                 <ul class="pagination">
                     <li v-for="element in projects.links" :key="element.label" class="page-item">
                         <button :disabled="!element.url" :class="{ active: element.active }" class="page-link"
-                            v-html="element.label"></button>
+                            v-html="element.label" @click="fetchProjects(element.url)"></button>
                     </li>
                 </ul>
             </nav>
