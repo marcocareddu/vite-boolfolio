@@ -41,11 +41,10 @@ export default {
             <nav>
                 <ul class="pagination">
                     <li v-for="element in projects.links" :key="element.label" class="page-item">
-                        <a class="page-link" href="#">{{ element.label }}</a>
+                        <button :class="{ active: element.active }" class="page-link">{{ element.label }}</button>
                     </li>
                 </ul>
             </nav>
-
 
         </div>
 
