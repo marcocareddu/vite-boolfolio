@@ -1,10 +1,12 @@
 <script>
 import axios from 'axios';
+import AppCard from './AppCard.vue';
 
 // Api Endpoints
 const baseEndpoint = 'http://127.0.0.1:8000/api/projects/'
 
 export default {
+    components: { AppCard },
     data() {
         return {
             projects: []
@@ -22,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container row">
         <ul>
             <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
         </ul>
