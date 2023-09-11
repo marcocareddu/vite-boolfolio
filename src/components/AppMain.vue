@@ -40,8 +40,9 @@ export default {
             <!-- Pagination Navbar -->
             <nav>
                 <ul class="pagination">
-                    <li v-for="element in  projects.links " :key="element.label" class="page-item">
-                        <button :class="{ active: element.active }" class="page-link" v-html="element.label"></button>
+                    <li v-for="element in projects.links" :key="element.label" class="page-item">
+                        <button :disabled="!element.url" :class="{ active: element.active }" class="page-link"
+                            v-html="element.label"></button>
                     </li>
                 </ul>
             </nav>
