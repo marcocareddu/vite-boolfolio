@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div class="card col-3 m-3 text-bg-dark">
+    <div class="card col-12 m-3 text-bg-dark">
         <img src="data.thumb" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column justify-content-between">
             <div>
