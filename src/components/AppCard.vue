@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div class="card col-12 m-3 text-bg-dark">
-        <img src="data.thumb" class="card-img-top" alt="...">
+        <img :src="data.thumb" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column justify-content-between">
             <div>
                 <h5 class="card-title">{{ data.name }}</h5>
