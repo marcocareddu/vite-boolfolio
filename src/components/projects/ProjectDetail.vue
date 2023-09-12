@@ -6,7 +6,9 @@ export default {
 </script>
 
 <template>
-    <h1>PROVA DETTAGLIO</h1>
+    <div class="container">
+        <h1>PROVA DETTAGLIO</h1>
+    </div>
 </template>
 
 <style scoped></style>
