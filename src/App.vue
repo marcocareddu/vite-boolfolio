@@ -1,9 +1,9 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
-import AppMain from './components/AppMain.vue'
+import ProjectsList from './components/projects/ProjectsList.vue'
 export default {
   name: 'Boolfolio',
-  components: { AppHeader, AppMain }
+  components: { AppHeader, ProjectsList }
 }
 
 </script>
@@ -11,9 +11,7 @@ export default {
 <template>
   <!-- Header -->
   <AppHeader />
-
-  <!-- Main -->
-  <AppMain />
+  <RouterView></RouterView>
 </template>
 
 <style scoped></style>
