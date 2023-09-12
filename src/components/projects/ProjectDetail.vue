@@ -36,7 +36,7 @@ export default {
 <template>
     <div class="container">
         <AppLoader v-if="apiLoading" />
-        <AppCard v-else :data="project" />
+        <AppCard v-else :data="project" :isDetail="true" />
     </div>
 </template>
 

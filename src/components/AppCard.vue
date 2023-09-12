@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router';
 
 export default {
-    props: { data: Object },
+    props: { data: Object, isDetail: Boolean },
     components: { RouterLink }
 }
 </script>
@@ -26,8 +26,10 @@ export default {
                 <button class="btn btn-outline-warning mx-3"><i class="fa-solid fa-pencil"></i></button>
 
                 <!-- Show Button -->
-                <RouterLink :to="{ name: 'project-detail', params: { id: data.id } }" class="btn btn-outline-primary mx-3">
-                    <i class="fa-solid fa-eye"></i></RouterLink>
+                <RouterLink v-if="!isDetail" :to="{ name: 'project-detail', params: { id: data.id } }"
+                    class="btn btn-outline-primary mx-3">
+                    <i class="fa-solid fa-eye"></i>
+                </RouterLink>
 
                 <!-- Delete Button -->
                 <button class="btn btn-outline-danger text-red"><i class="fa-solid fa-trash-can"></i></button>
