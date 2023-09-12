@@ -1,13 +1,15 @@
 <script>
 import axios from 'axios';
 import AppCard from '../AppCard.vue';
+import AppLoader from '../AppLoader.vue';
+
 
 // Api Endpoints
 const baseEndpoint = 'http://127.0.0.1:8000/api/projects/'
 
 export default {
     name: 'ProjectDetail',
-    components: { AppCard },
+    components: { AppCard, AppLoader },
     data() {
         return {
             project: [],
@@ -33,9 +35,8 @@ export default {
 
 <template>
     <div class="container">
-        <h1>PROVA DETTAGLIO</h1>
-
-        <AppCard :data="project" />
+        <AppLoader v-if="apiLoading" />
+        <AppCard v-else :data="project" />
     </div>
 </template>
 
