@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
-import AppCard from './AppCard.vue';
-import AppLoader from './AppLoader.vue';
+import AppCard from '../AppCard.vue';
+import AppLoader from '../AppLoader.vue';
 
 // Api Endpoints
 const baseEndpoint = 'http://127.0.0.1:8000/api/projects/'
