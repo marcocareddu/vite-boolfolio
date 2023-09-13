@@ -16,6 +16,9 @@
                             <li class="nav-item">
                                 <RouterLink class="nav-link active" :to="{ name: 'projects' }">Progetti</RouterLink>
                             </li>
+                            <li class="nav-item">
+                                <RouterLink class="nav-link active" :to="{ name: 'contact' }">Contattami</RouterLink>
+                            </li>
                         </ul>
                     </div>
                 </div>
