@@ -3,19 +3,27 @@ import axios from 'axios';
 import AppLoader from './AppLoader.vue';
 
 // Api Mail Endpoints
-const baseEndpoint = 'http://127.0.0.1:8000/api/mail-message'
+const baseEndpoint = 'http://127.0.0.1:8000/api/mail-message';
+
+// Form Object
+const emptyForm = { email: '', subject: '', mailText: '' };
 
 export default {
-    name: 'ProjectDetail',
+    name: 'MailForm',
     components: { AppLoader },
     data() {
         return {
             apiLoading: false,
-            form: {
-                email: '',
-                subject: '',
-                mailText: ''
-            }
+            form: emptyForm
+        }
+    },
+    methods: {
+        sendForm() {
+            this.apiLoading = true;
+            axios.post(baseEndpoint, this.form)
+                .then(() => { this.form = emptyForm })
+                .catch(err => { console.log(err) })
+                .then(() => { this.apiLoading = false; })
         }
     }
 };
@@ -26,8 +34,8 @@ export default {
 
     <!-- Email Form -->
     <div v-else class="container mt-5">
-        <form>
 
+        <form @submit.prevent="sendForm">
             <!-- Email Address Input -->
             <div class="mb-5">
                 <label for="mail" class="form-label">Indirizzo email</label>
